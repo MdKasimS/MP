@@ -9,20 +9,17 @@ const mongo = require('mongodb');
 const mongoClient = new mongo.MongoClient("mongodb://localhost:27017")
 
 // /* ---------- tried to do a 5 step driver-solution code------------
-// console.log(mongoClient);
 
 // get process's objects called connection object
 const connectionObject = async function () {
     return await mongoClient.connect().then();
 };
-// console.log("outer connectionObject", connectionObject);
 
 // call process's higher-level objects
 const database = async function () {
     return await connectionObject().then();//.db('local');
-};
 
-// console.log("database is :",database());
+};
 
 // call process's lower-level objects
 const myDb = async function () {
@@ -32,8 +29,6 @@ const myDb = async function () {
 
 const myCollection = async function(){
     let data = await myDb().then();
-
-    // let colle = await data().then().collection('via_csv');
     console.log(await data.find().toArray());
 };
 
