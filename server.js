@@ -2,13 +2,14 @@ console.log("Salam Hindutshan !!!");
 
 console.log("Alhamdulillah !!! All set !!!");
 
+// /* ---------- tried to do a 5 step driver-solution code------------
+
 // get process's driver code
 const mongo = require('mongodb');
 
 // get process's ID (either finr or its predecided)
 const mongoClient = new mongo.MongoClient("mongodb://localhost:27017")
 
-// /* ---------- tried to do a 5 step driver-solution code------------
 
 // get process's objects called connection object
 const connectionObject = async function () {
@@ -32,10 +33,9 @@ const myCollection = async function(){
     console.log(await data.find().toArray());
 };
 
-//*/
 
 
-async function getData() {
+function getData() {
     // let connectionObject = await mongoClient.connect();
     // console.log(connectionObject);
 
