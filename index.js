@@ -24,6 +24,9 @@ app.get('/books', (_, res)=>{
     res.sendFile(`${publicPath}/product_search.html`)
 });
 
+app.get('/national', (_, res)=>{
+    res.sendFile(`${publicPath}/trending_national.html`);
+});
 
 console.log("Listening port 5000");
 app.listen(5000);
