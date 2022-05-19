@@ -6,7 +6,7 @@ const mongoClient = new mongo.MongoClient("mongodb://localhost:27017")
 
 
 const databaseName = 'local';
-const collectionName = 'via_csv';
+const collectionName = 'users_details';
 
 const connectDB = async ()=>{
     
