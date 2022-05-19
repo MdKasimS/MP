@@ -12,27 +12,39 @@ const mongoClient = new mongo.MongoClient("mongodb://localhost:27017")
 
 
 // get process's objects called connection object
-const connectionObject = async function () {
-    return await mongoClient.connect().then();
-};
-
 // call process's higher-level objects
-const database = async function () {
-    return await connectionObject().then();//.db('local');
-
-};
-
 // call process's lower-level objects
-const myDb = async function () {
-    let dbs = (await database()).db('local');
-    return  dbs.collection('via_csv');
+// const connectionObject = async function () {
+//     return await mongoClient.connect().then();
+// };
+
+// const database = async function () {
+//     return await connectionObject().then();//.db('local');
+
+// };
+
+// const myDb = async function () {
+//     let dbs = (await database()).db('local');
+//     return  dbs.collection('via_csv');
+// }
+
+// const myCollection = async function(){
+//     let data = await myDb().then();
+//     console.log(await data.find().toArray());
+// };
+
+
+const connectionObject = async ()=>{
+    return await mongoClient.connect();
 }
 
-const myCollection = async function(){
-    let data = await myDb().then();
-    console.log(await data.find().toArray());
-};
+const database = async ()=>{
+    let dbs = await connectionObject();
+    let dbms = dbs.db('local');
+    let collection = dbms.collection('via_csv');
+    console.log(await collection.find({}).toArray());
 
+}
 
 
 function getData() {
@@ -45,7 +57,8 @@ function getData() {
     // console.log(await collection.dbName); //not compulsory to write await here
 
     // console.log(await collection.find({}).toArray());
-    myCollection();
+    // myCollection();
+    database();
 }
 
 
