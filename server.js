@@ -1,5 +1,17 @@
 const dbConnect = require('./db/mongodb');
+const static = require('./db/statData');
+const express = require('express');
+const app = express();
 
+
+app.get('/book', (req,res)=>{
+    console.log(req.query['kasim']);
+    res.send(static);
+});
+
+
+app.listen(5500);
+console.log(static);
 console.log("Salam Hindutshan !!!");
 console.log("Alhamdulillah !!! All set !!!");
 
@@ -35,9 +47,10 @@ async function updateData() {
     let data = await collection.updateOne({userName:'qasim'},{$set:{userName:'qasim04',passWord:'qasim@04'}});
     console.log(data);
 }
-function deleteData() {}
+
+async function deleteData() {}
 
 // getData();
 // setData();
-updateData();
+// updateData();
 // deleteData();
