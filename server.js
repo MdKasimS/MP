@@ -1,6 +1,5 @@
 const dbConnect = require('./db/mongodb');
 
-
 console.log("Salam Hindutshan !!!");
 console.log("Alhamdulillah !!! All set !!!");
 
