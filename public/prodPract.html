@@ -20,51 +20,6 @@
 
     <script src="./scripts/getBooks.js"></script>
 
-    <!-- <script>
-        let counter = 0;
-        let booksData = [];
-
-        function createBookCard()
-        {
-            // console.log('Salam Hindusthan !!!');
-
-            let root = document.getElementById("imageRoot");
-            let sect = document.createElement("section");
-            let tempDiv=root;
-            sect.setAttribute("class", 'featured');
-            sect.setAttribute("id", 'featured');
-            tempDiv.appendChild(sect);
-            tempDiv=sect;
-
-            divClassToSet = ['swiper featured-slider', 'swiper-wrapper', 'swiper-slide box', ""];//, "icons", "image", 'content'];
-
-            for(i=0;i<divClassToSet.length;++i)
-            {
-                console.log(i,divClassToSet[i]);
-                tempEle = document.createElement('div');
-                tempDiv.appendChild(tempEle);   
-                if(i!=3)
-                    tempEle.setAttribute("class",divClassToSet[i]);
-                
-                if(i==3)
-                    tempEle.setAttribute("id","actualCard");
-                
-                tempDiv =tempEle;
-            }
-        }
-
-        function fetchBooks()
-        {
-            let i=0;
-            for(i=0;i<5;++i)
-            {   
-                console.log("i am ",i)
-                createBookCard();
-                console.log("data added ?");
-            }
-        }
-
-    </script> -->
 </head>
 <body> 
 
@@ -152,19 +107,23 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide box">
                             <div class="" id="actualCard">
-                                <div class="icons" id="imageCardIcons">
+
+                                <div class="icons" id="imgIcons">
                                     <a href="#" class="fas fa-search"></a>
                                     <a href="#" class="fas fa-heart"></a>
                                     <a href="#" class="fas fa-eye"></a>
                                 </div>
-                                <div class="image" id="imageURL">
+
+                                <div class="image" id="imgURL">
                                     <img src="http://ecx.images-amazon.com/images/I/61t-hrSw9BL.jpg" alt="Avatar"  width="200px" height="250px">
                                 </div>
-                                <div class="content" id="bookContent">
-                                    <h3>featured books</h3>
+
+                                <div class="content" id="bkCntnt">
+                                    <h3>{Name}</h3>
                                     <div class="price">Rs.15.99 <span>Rs.20.99</span></div>
                                     <a href="#" class="btn">add to cart</a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
