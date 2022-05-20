@@ -7,7 +7,7 @@ const mongoClient = new mongo.MongoClient("mongodb://localhost:27017")
 
 const databaseName = 'local';
 // const collectionName = 'users_details';
-const collectionName = 'amazonBooks';
+const collectionName = 'googleBooks';
 
 
 const connectDB = async ()=>{

@@ -14,7 +14,6 @@ app.get('/books', (req,res)=>{
     getData();
 });
 
-app.get('/')
 
 app.listen(5500);
 console.log(static);
