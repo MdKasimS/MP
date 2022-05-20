@@ -1,6 +1,13 @@
 let count = 0;
 let booksData = [];
 
+let k = 0;
+let sampleURL = [
+    'http://books.google.com/books/content?id=c49GQwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+    'http://books.google.com/books/content?id=by4ytBy63o0C&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+    'http://books.google.com/books/content?id=_9u7AAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api'
+];
+
 function createBookCard()
 {
     // console.log('Salam Hindusthan !!!');
@@ -13,11 +20,10 @@ function createBookCard()
     tempDiv.appendChild(sect);
     tempDiv=sect;
 
-    divClassToSet = ['swiper featured-slider', 'swiper-wrapper', 'swiper-slide box', ""];//, "icons", "image", 'content'];
+    divClassToSet = ['swiper featured-slider', 'swiper-wrapper', 'swiper-slide box', ""];
 
     for(i=0;i<divClassToSet.length;++i)
     {
-        // console.log(i,divClassToSet[i]); 
         tempEle = document.createElement('div');
         tempDiv.appendChild(tempEle);   
         if(i!=3)
@@ -42,13 +48,13 @@ function createBookCard()
         {
             tempEle.setAttribute("id",`imgIcons${count}`);
             
-            for(j=0;j<3;++j)
-            {
-                t=document.createElement('a');
-                tempEle.appendChild(t);
-                t.setAttribute("href",`{fetchedValue}`);
-                t.setAttribute("class",iconClassToSet[j]);
-            }
+            // for(j=0;j<3;++j)
+            // {
+            //     t=document.createElement('a');
+            //     tempEle.appendChild(t);
+            //     t.setAttribute("href",`{fetchedValue}`);
+            //     t.setAttribute("class",iconClassToSet[j]);
+            // }
         }
         
         if (i==1)
@@ -56,7 +62,7 @@ function createBookCard()
             tempEle.setAttribute("id",`imgURL${count}`);
             t=document.createElement('img');
             tempEle.appendChild(t);
-            t.setAttribute("src",`{fetchedValue}`);
+            t.setAttribute("src",sampleURL[k++ % 3]);
         }
 
         if (i==2)
@@ -77,12 +83,18 @@ function createBookCard()
             tempEle.appendChild(t);
             t.setAttribute("href",`{fetchedValue}`);
             t.setAttribute("class","btn");
+            t.innerText="Add To Cart";
         }
     }
 
-    tempDiv=document.getElementsByClassName("icons");
-    console.log(tempDiv);
-
+    tempEle = document.getElementById(`imgIcons${count}`);
+    for(j=0;j<3;++j)
+    {
+        t=document.createElement('a');
+        tempEle.appendChild(t);
+        t.setAttribute("href",`{fetchedValue}`);
+        t.setAttribute("class",iconClassToSet[j]);
+    }
 }
 
 function fetchBooks()
