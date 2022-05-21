@@ -47,14 +47,6 @@ function createBookCard()
         if (i==0)
         {
             tempEle.setAttribute("id",`imgIcons${count}`);
-            
-            // for(j=0;j<3;++j)
-            // {
-            //     t=document.createElement('a');
-            //     tempEle.appendChild(t);
-            //     t.setAttribute("href",`{fetchedValue}`);
-            //     t.setAttribute("class",iconClassToSet[j]);
-            // }
         }
         
         if (i==1)
@@ -105,4 +97,14 @@ function fetchBooks()
         createBookCard();
         ++count;
     }
+}
+
+let data;
+let resp;
+async function getData()
+{
+    resp = await fetch("http://127.0.0.1:5001/books/data");
+    data = await resp.text();
+    console.log(data);
+    console.log("I am at client");
 }

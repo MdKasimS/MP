@@ -21,7 +21,7 @@
     <script src="./scripts/getBooks.js"></script>
 
 </head>
-<body> 
+<input> 
 
     
     <header class="header">
@@ -101,10 +101,11 @@
 
 
     <div class="container">
-        <div class="row" id="imageRoot">
-        </div>
+        <div class="row" id="imageRoot"></div>
     </div> 
 
+    <input type="button" value="Click To GetData" onclick="getData();"></input>
+    
     <section class="footer">
 
         <div class="box-container">
@@ -154,13 +155,14 @@
             <a href="#" class="fab fa-linkedin"></a>
             <a href="#" class="fab fa-pinterest"></a>
         </div>
-    
+        
         <div class="credit"> created by <span>MIR Corporation </span> | all rights reserved! </div>
-    
+        
     </section>
 
     <script>
        fetchBooks();
+       getData();
     </script>
 
     <!-- custom js file link  -->
