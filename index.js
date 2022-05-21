@@ -1,5 +1,7 @@
+const getData = require('./db/read');
 const express= require('express');
 const path = require('path');
+
 
 console.log("Salam Hindutshan !!!");
 console.log("Alhamdulillah !!! All set !!!");
@@ -22,12 +24,9 @@ app.get('/contact', (_, res)=>{
     res.send('Error Page Not Found');
 });
 
-// app.get('/books', (_, res)=>{
-//     res.sendFile(`${publicPath}/prodPract.html`);
-// });
-
-app.get('/books',(req,res)=>{
-    // console.log(req.query['kasim']);
+app.get('/books', async (req,res)=>{
+    console.log(req.query['kasim']);
+    // res.send(static);
     res.sendFile(`${publicPath}/prodPract.html`);
 });
 
