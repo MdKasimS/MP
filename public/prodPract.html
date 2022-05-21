@@ -21,7 +21,7 @@
     <script src="./scripts/getBooks.js"></script>
 
 </head>
-<input> 
+<body> 
 
     
     <header class="header">
@@ -104,7 +104,7 @@
         <div class="row" id="imageRoot"></div>
     </div> 
 
-    <input type="button" value="Click To GetData" onclick="moreData();"></input>
+    <input class="button" type="button" value="Click To GetData" onclick="moreData();console.log(data)//displayBooks();"></body>
     
     <section class="footer">
 
@@ -161,8 +161,7 @@
     </section>
 
     <script>
-       fetchBooks();
-       getData();
+        displayBooks();
     </script>
 
     <!-- custom js file link  -->

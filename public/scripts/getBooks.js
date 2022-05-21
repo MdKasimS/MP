@@ -1,4 +1,6 @@
-let count = 0;
+// let count = 0;
+let counter=20;
+
 let booksData = [];
 
 let k = 0;
@@ -8,7 +10,28 @@ let sampleURL = [
     'http://books.google.com/books/content?id=_9u7AAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api'
 ];
 
-function createBookCard()
+let data;
+let resp;
+async function getData()
+{
+    resp = await fetch("http://127.0.0.1:5001/books/data");
+    data = await resp.json();
+    console.log(data)
+    // counter= data.length%20;
+    console.log(typeof(data));
+}
+
+function moreData()
+{
+    for(i=0;i<counter;++i)
+    {
+        console.log(data[i].isbn10);
+        console.log(data[i].thumbnail);
+    }
+    console.log("I am at client", ++counter);
+}
+
+function createBookCard(count)
 {
     // console.log('Salam Hindusthan !!!');
 
@@ -54,7 +77,7 @@ function createBookCard()
             tempEle.setAttribute("id",`imgURL${count}`);
             t=document.createElement('img');
             tempEle.appendChild(t);
-            t.setAttribute("src",sampleURL[k++ % 3]);
+            t.setAttribute("src", `${data[count].thumbnail}`);
         }
 
         if (i==2)
@@ -63,18 +86,28 @@ function createBookCard()
 
             t=document.createElement('h3');
             tempEle.appendChild(t);
+            t.appendChild(document.createTextNode(`${data[count].title}`));
+
+            t=document.createElement('h4');
+            tempEle.appendChild(t);
+            t.appendChild(document.createTextNode(`-${data[count].authors}`));
             
             t=document.createElement('div');
             tempEle.appendChild(t);
             t.setAttribute("class",`price`);
+            t.setAttribute("id",`price${count}`);
+            t.innerText=`Rs.${(data[count].num_pages * 2)/5}`;
+
 
             et=document.createElement('span');
             t.appendChild(et);
 
             t=document.createElement('a');
             tempEle.appendChild(t);
-            t.setAttribute("href",`{fetchedValue}`);
             t.setAttribute("class","btn");
+            t.setAttribute("id",`${data[count].isbn10}`);//cartItem${count}`);
+            // t.setAttribute("onclick",`sendToCart('bkCntnt${count}')`)//${data[i].isbn10})`);
+            t.setAttribute("onclick",`sendToCart('${data[count].isbn10}')`);//${data[i].isbn10})`);
             t.innerText="Add To Cart";
         }
     }
@@ -89,39 +122,21 @@ function createBookCard()
     }
 }
 
-function fetchBooks()
+async function displayBooks()
 {
+    await getData();
     let i=0;
-    for(i=0;i<5;++i)
-    {   
-        createBookCard();
-        ++count;
-    }
-}
-
-let data;
-let resp;
-let counter=2;
-async function getData()
-{
-    resp = await fetch("http://127.0.0.1:5001/books/data");
-    data = await resp.json();
- 
-    // console.log(data);
-    console.log(typeof(data));
-
-    // for(i=0;i<counter;++i)
-    // {
-    //     console.log(data[i]);
-    // }
-    // console.log("I am at client", ++counter);
-}
-
-function moreData()
-{
+    console.log(data);
     for(i=0;i<counter;++i)
-    {
-        console.log(data[i]);
+    {   
+        createBookCard(i);
     }
-    console.log("I am at client", ++counter);
 }
+
+function sendToCart(itemId)
+{
+    let itemDetails = document.getElementById(itemId);
+    console.log(itemDetails.id);
+    console.log(itemDetails.e);
+}   
+
