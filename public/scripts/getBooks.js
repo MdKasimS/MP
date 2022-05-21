@@ -101,10 +101,27 @@ function fetchBooks()
 
 let data;
 let resp;
+let counter=2;
 async function getData()
 {
     resp = await fetch("http://127.0.0.1:5001/books/data");
-    data = await resp.text();
-    console.log(data);
-    console.log("I am at client");
+    data = await resp.json();
+ 
+    // console.log(data);
+    console.log(typeof(data));
+
+    // for(i=0;i<counter;++i)
+    // {
+    //     console.log(data[i]);
+    // }
+    // console.log("I am at client", ++counter);
+}
+
+function moreData()
+{
+    for(i=0;i<counter;++i)
+    {
+        console.log(data[i]);
+    }
+    console.log("I am at client", ++counter);
 }

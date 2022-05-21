@@ -30,7 +30,9 @@ app.get('/books', async (req,res)=>{
 app.get('/books/data',async  (req, res)=>{
     let data = await getData();
     console.log(data);
-     res.send(data);
+    // res.send(JSON.stringify(data));
+    res.send(data);
+    console.log(typeof(data));
     console.log("I am at server :")
 });
 
