@@ -21,7 +21,7 @@ app.get('/contact', (_, res)=>{
 });
 
 app.get('/books', (_, res)=>{
-    res.sendFile(`${publicPath}/product_search.html`)
+    res.sendFile(`${publicPath}/prodPract.html`)
 });
 
 app.get('/national', (_, res)=>{
