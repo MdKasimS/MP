@@ -1,15 +1,6 @@
 // let count = 0;
 let counter=20;
 
-let booksData = [];
-
-let k = 0;
-let sampleURL = [
-    'http://books.google.com/books/content?id=c49GQwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-    'http://books.google.com/books/content?id=by4ytBy63o0C&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-    'http://books.google.com/books/content?id=_9u7AAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api'
-];
-
 let data;
 let resp;
 async function getData()
@@ -137,6 +128,5 @@ function sendToCart(itemId)
 {
     let itemDetails = document.getElementById(itemId);
     console.log(itemDetails.id);
-    console.log(itemDetails.e);
-}   
-
+    // console.log(itemDetails.e);
+}  

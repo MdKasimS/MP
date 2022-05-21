@@ -1,7 +1,9 @@
 const express= require('express');
 const path = require('path');
 
-// const connect = mongoose.connect(//)
+console.log("Salam Hindutshan !!!");
+console.log("Alhamdulillah !!! All set !!!");
+
 
 const publicPath = path.join(__dirname,'public');
 const app = express();
@@ -20,10 +22,15 @@ app.get('/contact', (_, res)=>{
     res.send('Error Page Not Found');
 });
 
-app.get('/books', (_, res)=>{
-    res.sendFile(`${publicPath}/prodPract.html`)
+// app.get('/books', (_, res)=>{
+//     res.sendFile(`${publicPath}/prodPract.html`);
+// });
+
+app.get('/books',(req,res)=>{
+    // console.log(req.query['kasim']);
+    res.sendFile(`${publicPath}/prodPract.html`);
 });
 
-
 console.log("Listening port 5000");
+console.log("Application started .....");
 app.listen(5000);
