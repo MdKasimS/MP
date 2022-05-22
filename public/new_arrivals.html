@@ -18,6 +18,8 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="styles/style.css">
 
+    <script src="./scripts/getBooks.js"></script>
+
 </head>
 <body>
 
@@ -98,54 +100,7 @@
 
 
     <div class="container">
-        <div class="row">        
-            <section class="featured" id="featured">
-                <div class="swiper featured-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide box">
-                            <div>
-                                <div class="icons">
-                                    <a href="#" class="fas fa-search"></a>
-                                    <a href="#" class="fas fa-heart"></a>
-                                    <a href="#" class="fas fa-eye"></a>
-                                </div>
-                                <div class="image">
-                                    <img src="http://ecx.images-amazon.com/images/I/61t-hrSw9BL.jpg" alt="Avatar"  width="200px" height="250px">
-                                </div>
-                                <div class="content">
-                                    <h3>featured books</h3>
-                                    <div class="price">Rs.15.99 <span>Rs.20.99</span></div>
-                                    <a href="#" class="btn">add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="featured" id="featured">
-                <div class="swiper featured-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide box">
-                            <div>
-                                <div class="icons">
-                                    <a href="#" class="fas fa-search"></a>
-                                    <a href="#" class="fas fa-heart"></a>
-                                    <a href="#" class="fas fa-eye"></a>
-                                </div>
-                                <div class="image">
-                                    <img src="http://ecx.images-amazon.com/images/I/61t-hrSw9BL.jpg" alt="Avatar"  width="200px" height="250px">
-                                </div>
-                                <div class="content">
-                                    <h3>featured books</h3>
-                                    <div class="price">Rs.15.99 <span>Rs.20.99</span></div>
-                                    <a href="#" class="btn">add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="row" id="imageRoot">        
         </div>
     </div> 
 
@@ -210,6 +165,9 @@
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+    <script>
+        createBookCard();
+    </script>
 </body>
 </html>
 

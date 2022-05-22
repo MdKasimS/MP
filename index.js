@@ -30,6 +30,10 @@ app.get('/books', (_, res)=>{
     res.sendFile(`${publicPath}/prodPract.html`)
 });
 
+app.get('/arrivals', (_, res)=>{
+    res.sendFile(`${publicPath}/new_arrivals.html`);
+});
+
 
 app.get('/national', (_, res)=>{
     res.sendFile(`${publicPath}/trending_national.html`);

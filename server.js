@@ -28,7 +28,3 @@ console.log(static);
 
 
 
-// getData();
-// setData();
-// updateData();
-// deleteData();
