@@ -16,7 +16,6 @@ async function createBookCard()//count,d)
 {
     console.log('Salam Hindusthan !!!');
     data= await getData();
-    console.log(data);
     for(count=0; count<counter;++count){
 
     let root = document.getElementById("imageRoot");
@@ -71,6 +70,10 @@ async function createBookCard()//count,d)
             t=document.createElement('h3');
             tempEle.appendChild(t);
             t.appendChild(document.createTextNode(`${data[count].title}`));
+
+            t=document.createElement('h3');
+            tempEle.appendChild(t);
+            t.appendChild(document.createTextNode(`${data[count].authors}`));
             
             t=document.createElement('div');
             tempEle.appendChild(t);
@@ -101,15 +104,15 @@ async function createBookCard()//count,d)
 }
 }
 
-async function displayBooks()
-{
-    let data = await getData();
-    console.log("I am in getData()");
-    for(i=0;i<counter;++i)
-    {   
-        createBookCard(i, data);
-    }
-}
+// async function displayBooks()
+// {
+//     let data = await getData();
+//     console.log("I am in getData()");
+//     for(i=0;i<counter;++i)
+//     {   
+//         createBookCard(i, data);
+//     }
+// }
 
 function sendToCart(itemId)
 {
