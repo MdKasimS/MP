@@ -6,6 +6,9 @@ const app = express();
 
 app.use(express.static(publicPath));
 
+app.get('/', (req, res)=>{
+    res.sendFile(`${publicPath}/index.html`);
+});
 
 app.get('/regi', (req, res)=>{
     console.log('I am in registry', req.query);
@@ -13,3 +16,4 @@ app.get('/regi', (req, res)=>{
 });
 
 app.listen(5003);
+console.log("Server started at 5003....");

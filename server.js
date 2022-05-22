@@ -24,7 +24,8 @@ app.get('/books/data', async (req, res)=>{
 });
 
 app.listen(5001);
-console.log(static);
+// console.log(static);
+console.log("Server started at 5001....");
 
 
 
