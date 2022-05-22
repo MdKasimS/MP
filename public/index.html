@@ -27,7 +27,7 @@
         <a href="./index.html" class="logo"> <i class="fas fa-book"></i> MIR</a>
 
         <!-- Microservice 1. -->
-        <form action="" class="search-form">
+        <form action="http://localhost:5001/books/data" class="search-form">
             <input type="search" name="" placeholder="search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
         </form>
@@ -39,7 +39,7 @@
             <a href="#" class="fas fa-heart"></a>
 
             <!-- Microservice 3. -->
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="./cart.html" class="fas fa-shopping-cart"></a>
             
             <!-- Microservice 4.  -->
             <div id="login-btn" class="fas fa-user"></div>
@@ -50,8 +50,8 @@
     <!-- component 2.X -->
     <div class="header-2">
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#featured">featured</a>
+            <a href="./index.html">home</a>
+            <a href="./featuredBooks.html">featured</a>
             <a href="./new_arrivals.html">arrivals</a>
             <a href="#reviews">reviews</a>
             <a href="#blogs">blogs</a>
@@ -66,7 +66,7 @@
 
 <nav class="bottom-navbar">
     <a href="#home" class="fas fa-home"></a>
-    <a href="#featured" class="fas fa-list"></a>
+    <a href="./featuredBooks.html" class="fas fa-list"></a>
     <a href="./new_arrivals.html" class="fas fa-tags"></a>
     <a href="#reviews" class="fas fa-comments"></a>
     <a href="#blogs" class="fas fa-blog"></a>
@@ -80,14 +80,14 @@
     <div id="close-login-btn" class="fas fa-times"></div>
 
     <!-- Microservice 5. -->
-    <form action="">
+    <form action="http://localhost:5002/data/">
         <h3>sign in</h3>
         <span>username</span>
-        <input type="email" name="" class="box" placeholder="enter your email" id="">
+        <input type="email" name="uE" class="box" placeholder="enter your email" >
         <span>password</span>
-        <input type="password" name="" class="box" placeholder="enter your password" id="">
+        <input type="password" name="uP" class="box" placeholder="enter your password" >
         <div class="checkbox">
-            <input type="checkbox" name="" id="remember-me">
+            <input type="checkbox" name="creaSess" id="remember-me">
             <label for="remember-me"> remember me</label>
         </div>
         <input type="submit" value="sign in" class="btn">
@@ -185,7 +185,7 @@
 
 <section class="featured" id="featured">
 
-    <h1 class="heading"> <span>featured books</span> </h1>
+    <h1 class="heading"> <span><a href="./featuredBooks.html">featured books</a></span> </h1>
 
     <div class="swiper featured-slider">
 

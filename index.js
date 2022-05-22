@@ -26,6 +26,10 @@ app.get('/contact', (_, res)=>{
     res.send('Error Page Not Found');
 });
 
+app.get('/featured', (_,res)=>{
+    res.sendFile(`${publicPath}/featuredBooks.html`);
+});
+
 app.get('/books', (_, res)=>{
     res.sendFile(`${publicPath}/prodPract.html`)
 });
